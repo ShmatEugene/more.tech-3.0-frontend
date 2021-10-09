@@ -14,128 +14,93 @@ import {
   TableHead,
   TableRow,
   TableSortLabel,
-  Tooltip
+  Tooltip,
 } from '@material-ui/core';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 const orders = [
   {
     id: uuid(),
-    ref: 'CDD1049',
+    ref: 'id',
     amount: 30.5,
     customer: {
-      name: 'Ekaterina Tankova'
+      name: 'Spotify URI of the song',
     },
-    createdAt: 1555016400000,
-    status: 'pending'
+    createdAt: '100 unique values',
   },
   {
     id: uuid(),
-    ref: 'CDD1048',
+    ref: 'name',
     amount: 25.1,
     customer: {
-      name: 'Cao Yu'
+      name: 'Name of the song',
     },
-    createdAt: 1555016400000,
-    status: 'delivered'
+    createdAt: '100 unique values',
   },
   {
     id: uuid(),
-    ref: 'CDD1047',
+    ref: 'artists',
     amount: 10.99,
     customer: {
-      name: 'Alexa Richardson'
+      name: 'Artist(s) of the song',
     },
-    createdAt: 1554930000000,
-    status: 'refunded'
+    createdAt: 'XXXTENTACION 6% Post Malone 6%',
   },
   {
     id: uuid(),
-    ref: 'CDD1046',
+    ref: 'danceability',
     amount: 96.43,
     customer: {
-      name: 'Anje Keizer'
+      name: 'Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo.',
     },
-    createdAt: 1554757200000,
-    status: 'pending'
+    createdAt: 'numbers in range (0.26, 0.96)',
   },
   {
     id: uuid(),
-    ref: 'CDD1045',
+    ref: 'energy',
     amount: 32.54,
     customer: {
-      name: 'Clarke Gillebert'
+      name: 'Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks',
     },
-    createdAt: 1554670800000,
-    status: 'delivered'
+    createdAt: 'numbers in range (0.3, 0.91)',
   },
   {
     id: uuid(),
-    ref: 'CDD1044',
+    ref: 'key',
     amount: 16.76,
     customer: {
-      name: 'Adam Denisov'
+      name: 'The key the track is in. Integers map to pitches using standard Pitch Class notation. E.g. 0 = C, 1 = C♯/D♭, 2 = D',
     },
-    createdAt: 1554670800000,
-    status: 'delivered'
-  }
+    createdAt: 'numbers in range (0, 11)',
+  },
 ];
 
 const LatestOrders = (props) => (
   <Card {...props}>
-    <CardHeader title="Latest Orders" />
+    <CardHeader title="Metadata" />
     <Divider />
     <PerfectScrollbar>
       <Box sx={{ minWidth: 800 }}>
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>
-                Order Ref
-              </TableCell>
-              <TableCell>
-                Customer
-              </TableCell>
+              <TableCell>Field</TableCell>
+              <TableCell>Description</TableCell>
               <TableCell sortDirection="desc">
-                <Tooltip
-                  enterDelay={300}
-                  title="Sort"
-                >
-                  <TableSortLabel
-                    active
-                    direction="desc"
-                  >
-                    Date
+                <Tooltip enterDelay={300} title="Sort">
+                  <TableSortLabel active direction="desc">
+                    Data
                   </TableSortLabel>
                 </Tooltip>
-              </TableCell>
-              <TableCell>
-                Status
               </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {orders.map((order) => (
-              <TableRow
-                hover
-                key={order.id}
-              >
-                <TableCell>
-                  {order.ref}
-                </TableCell>
-                <TableCell>
-                  {order.customer.name}
-                </TableCell>
-                <TableCell>
-                  {moment(order.createdAt).format('DD/MM/YYYY')}
-                </TableCell>
-                <TableCell>
-                  <Chip
-                    color="primary"
-                    label={order.status}
-                    size="small"
-                  />
-                </TableCell>
+              <TableRow hover key={order.id}>
+                <TableCell>{order.ref}</TableCell>
+                <TableCell>{order.customer.name}</TableCell>
+                <TableCell>{order.createdAt}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -146,15 +111,9 @@ const LatestOrders = (props) => (
       sx={{
         display: 'flex',
         justifyContent: 'flex-end',
-        p: 2
-      }}
-    >
-      <Button
-        color="primary"
-        endIcon={<ArrowRightIcon />}
-        size="small"
-        variant="text"
-      >
+        p: 2,
+      }}>
+      <Button color="primary" endIcon={<ArrowRightIcon />} size="small" variant="text">
         View all
       </Button>
     </Box>

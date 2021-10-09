@@ -15,9 +15,9 @@ import {
 import NavItem from './NavItem';
 
 const user = {
-  avatar: '/static/images/avatars/avatar_6.png',
-  jobTitle: 'Senior Developer',
-  name: 'Katarina Smith',
+  avatar: 'https://via.placeholder.com/150',
+  jobTitle: '',
+  name: 'Иван',
 };
 
 const items = [
@@ -27,25 +27,20 @@ const items = [
     title: 'Dashboard',
   },
   {
-    href: '/app/customers',
-    icon: UsersIcon,
-    title: 'Customers',
-  },
-  {
     href: '/app/products',
     icon: ShoppingBagIcon,
-    title: 'Products',
+    title: 'Datasets',
   },
-  {
-    href: '/app/account',
-    icon: UserIcon,
-    title: 'Account',
-  },
-  {
-    href: '/app/settings',
-    icon: SettingsIcon,
-    title: 'Settings',
-  },
+  // {
+  //   href: '/app/account',
+  //   icon: UserIcon,
+  //   title: 'Account',
+  // },
+  // {
+  //   href: '/app/settings',
+  //   icon: SettingsIcon,
+  //   title: 'Settings',
+  // },
   {
     href: '/login',
     icon: LockIcon,
@@ -56,11 +51,11 @@ const items = [
     icon: UserPlusIcon,
     title: 'Register',
   },
-  {
-    href: '/404',
-    icon: AlertCircleIcon,
-    title: 'Error',
-  },
+  // {
+  //   href: '/404',
+  //   icon: AlertCircleIcon,
+  //   title: 'Error',
+  // },
 ];
 
 const DashboardSidebar = ({ onMobileClose, openMobile }) => {

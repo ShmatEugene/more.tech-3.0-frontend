@@ -7,7 +7,7 @@ import {
   CardHeader,
   Divider,
   useTheme,
-  colors
+  colors,
 } from '@material-ui/core';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
@@ -24,8 +24,8 @@ const Sales = (props) => {
         borderRadius: 4,
         categoryPercentage: 0.5,
         data: [18, 5, 19, 27, 29, 19, 20],
-        label: 'This year',
-        maxBarThickness: 10
+        label: 'dataset',
+        maxBarThickness: 10,
       },
       {
         backgroundColor: colors.grey[200],
@@ -34,11 +34,11 @@ const Sales = (props) => {
         borderRadius: 4,
         categoryPercentage: 0.5,
         data: [11, 20, 12, 29, 30, 25, 13],
-        label: 'Last year',
-        maxBarThickness: 10
-      }
+        label: 'avg',
+        maxBarThickness: 10,
+      },
     ],
-    labels: ['1 Aug', '2 Aug', '3 Aug', '4 Aug', '5 Aug', '6 Aug']
+    labels: ['1', '2', '3', '4', '5', '6'],
   };
 
   const options = {
@@ -52,20 +52,20 @@ const Sales = (props) => {
       xAxes: [
         {
           ticks: {
-            fontColor: theme.palette.text.secondary
+            fontColor: theme.palette.text.secondary,
           },
           gridLines: {
             display: false,
-            drawBorder: false
-          }
-        }
+            drawBorder: false,
+          },
+        },
       ],
       yAxes: [
         {
           ticks: {
             fontColor: theme.palette.text.secondary,
             beginAtZero: true,
-            min: 0
+            min: 0,
           },
           gridLines: {
             borderDash: [2],
@@ -74,10 +74,10 @@ const Sales = (props) => {
             drawBorder: false,
             zeroLineBorderDash: [2],
             zeroLineBorderDashOffset: [2],
-            zeroLineColor: theme.palette.divider
-          }
-        }
-      ]
+            zeroLineColor: theme.palette.divider,
+          },
+        },
+      ],
     },
     tooltips: {
       backgroundColor: theme.palette.background.paper,
@@ -88,36 +88,28 @@ const Sales = (props) => {
       footerFontColor: theme.palette.text.secondary,
       intersect: false,
       mode: 'index',
-      titleFontColor: theme.palette.text.primary
-    }
+      titleFontColor: theme.palette.text.primary,
+    },
   };
 
   return (
     <Card {...props}>
       <CardHeader
-        action={(
-          <Button
-            endIcon={<ArrowDropDownIcon />}
-            size="small"
-            variant="text"
-          >
+        action={
+          <Button endIcon={<ArrowDropDownIcon />} size="small" variant="text">
             Last 7 days
           </Button>
-        )}
-        title="Latest Sales"
+        }
+        title="Data quality assessment"
       />
       <Divider />
       <CardContent>
         <Box
           sx={{
             height: 400,
-            position: 'relative'
-          }}
-        >
-          <Bar
-            data={data}
-            options={options}
-          />
+            position: 'relative',
+          }}>
+          <Bar data={data} options={options} />
         </Box>
       </CardContent>
       <Divider />
@@ -125,15 +117,9 @@ const Sales = (props) => {
         sx={{
           display: 'flex',
           justifyContent: 'flex-end',
-          p: 2
-        }}
-      >
-        <Button
-          color="primary"
-          endIcon={<ArrowRightIcon />}
-          size="small"
-          variant="text"
-        >
+          p: 2,
+        }}>
+        <Button color="primary" endIcon={<ArrowRightIcon />} size="small" variant="text">
           Overview
         </Button>
       </Box>
