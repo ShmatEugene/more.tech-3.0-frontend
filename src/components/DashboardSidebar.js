@@ -21,11 +21,11 @@ const user = {
 };
 
 const items = [
-  {
-    href: '/app/dashboard',
-    icon: BarChartIcon,
-    title: 'Dashboard',
-  },
+  // {
+  //   href: '/app/dashboard',
+  //   icon: BarChartIcon,
+  //   title: 'Dashboard',
+  // },
   {
     href: '/app/products',
     icon: ShoppingBagIcon,

@@ -36,17 +36,18 @@ export default [
   {
     id: uuid(),
     createdAt: '04/04/2019',
-    description: 'table containing all the users created on a single day',
+    description: 'This dataset contains Covid-19 data of European ountries as on October 09, 2021',
     media: '/static/images/products/product_5.png',
-    title: 'fct_users_created',
+    title: 'Covid-19 in Europe - Latest Data',
     totalDownloads: '3',
   },
   {
     id: uuid(),
     createdAt: '04/04/2019',
-    description: 'table containing all the users deleted on a single day',
+    description:
+      'This dataset consists of immigrants record from 150+ countries to Canada between 1980 to 2013.',
     media: '/static/images/products/product_6.png',
-    title: 'fct_users_deleted',
+    title: 'Immigration to Canada',
     totalDownloads: '1',
   },
 ];

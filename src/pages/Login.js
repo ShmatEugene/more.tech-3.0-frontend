@@ -2,15 +2,7 @@ import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Link,
-  TextField,
-  Typography
-} from '@material-ui/core';
+import { Box, Button, Container, Grid, Link, TextField, Typography } from '@material-ui/core';
 import FacebookIcon from '../icons/Facebook';
 import GoogleIcon from '../icons/Google';
 
@@ -20,7 +12,7 @@ const Login = () => {
   return (
     <>
       <Helmet>
-        <title>Login | Material Kit</title>
+        <title>Login</title>
       </Helmet>
       <Box
         sx={{
@@ -28,23 +20,24 @@ const Login = () => {
           display: 'flex',
           flexDirection: 'column',
           height: '100%',
-          justifyContent: 'center'
-        }}
-      >
+          justifyContent: 'center',
+        }}>
         <Container maxWidth="sm">
           <Formik
             initialValues={{
               email: 'demo@devias.io',
-              password: 'Password123'
+              password: 'Password123',
             }}
             validationSchema={Yup.object().shape({
-              email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-              password: Yup.string().max(255).required('Password is required')
+              email: Yup.string()
+                .email('Must be a valid email')
+                .max(255)
+                .required('Email is required'),
+              password: Yup.string().max(255).required('Password is required'),
             })}
             onSubmit={() => {
-              navigate('/app/dashboard', { replace: true });
-            }}
-          >
+              navigate('/app/products', { replace: true });
+            }}>
             {({
               errors,
               handleBlur,
@@ -52,56 +45,36 @@ const Login = () => {
               handleSubmit,
               isSubmitting,
               touched,
-              values
+              values,
             }) => (
               <form onSubmit={handleSubmit}>
                 <Box sx={{ mb: 3 }}>
-                  <Typography
-                    color="textPrimary"
-                    variant="h2"
-                  >
+                  <Typography color="textPrimary" variant="h2">
                     Sign in
                   </Typography>
-                  <Typography
-                    color="textSecondary"
-                    gutterBottom
-                    variant="body2"
-                  >
+                  <Typography color="textSecondary" gutterBottom variant="body2">
                     Sign in on the internal platform
                   </Typography>
                 </Box>
-                <Grid
-                  container
-                  spacing={3}
-                >
-                  <Grid
-                    item
-                    xs={12}
-                    md={6}
-                  >
+                <Grid container spacing={3}>
+                  <Grid item xs={12} md={6}>
                     <Button
                       color="primary"
                       fullWidth
                       startIcon={<FacebookIcon />}
                       onClick={handleSubmit}
                       size="large"
-                      variant="contained"
-                    >
+                      variant="contained">
                       Login with Facebook
                     </Button>
                   </Grid>
-                  <Grid
-                    item
-                    xs={12}
-                    md={6}
-                  >
+                  <Grid item xs={12} md={6}>
                     <Button
                       fullWidth
                       startIcon={<GoogleIcon />}
                       onClick={handleSubmit}
                       size="large"
-                      variant="contained"
-                    >
+                      variant="contained">
                       Login with Google
                     </Button>
                   </Grid>
@@ -109,14 +82,9 @@ const Login = () => {
                 <Box
                   sx={{
                     pb: 1,
-                    pt: 3
-                  }}
-                >
-                  <Typography
-                    align="center"
-                    color="textSecondary"
-                    variant="body1"
-                  >
+                    pt: 3,
+                  }}>
+                  <Typography align="center" color="textSecondary" variant="body1">
                     or login with email address
                   </Typography>
                 </Box>
@@ -153,17 +121,12 @@ const Login = () => {
                     fullWidth
                     size="large"
                     type="submit"
-                    variant="contained"
-                  >
+                    variant="contained">
                     Sign in now
                   </Button>
                 </Box>
-                <Typography
-                  color="textSecondary"
-                  variant="body1"
-                >
-                  Don&apos;t have an account?
-                  {' '}
+                <Typography color="textSecondary" variant="body1">
+                  Don&apos;t have an account?{' '}
                   <Link component={RouterLink} to="/register" variant="h6" underline="hover">
                     Sign up
                   </Link>
